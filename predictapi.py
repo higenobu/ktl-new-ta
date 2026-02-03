@@ -49,7 +49,7 @@ def load_all_models(model_dir: str, device: torch.device):
 
 
 # Load the models and tokenizers globally to save memory
-model_dir = "../tamodels/"  # Replace with your actual model directory
+model_dir = "tamodels/"  # Replace with your actual model directory
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 models, tokenizers = load_all_models(model_dir, device)
 
