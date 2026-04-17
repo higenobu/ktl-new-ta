@@ -56,7 +56,7 @@ python3 batch_predict.py \
 サーバ：
 
 データ (学習用再構築)：``/data``\
-学習済みモデル (早大RoBERTa/regression): ``/home/alkalinemoe/psych_model_scripts/model``
+学習済みモデル (早大RoBERTa/regression): ``/model``
 
 ```
 (番号 1~7 それぞれの感情的情報に対応)
