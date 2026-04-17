@@ -1,5 +1,5 @@
-# ktl-ta-scripts
-kyototextlab/ktl-psych-press-assist-ds-updated-data における Jupyter Notebook や データセットをまとめ、学習スクリプトに直したものです。
+# ta-scripts
+
 
 ## TA モデル学習
 
@@ -7,7 +7,7 @@ kyototextlab/ktl-psych-press-assist-ds-updated-data における Jupyter Noteboo
 必要な学習パラメーターを適宜変更
 
 ```
-TARGET_DIR='/home/alkalinemoe/psych_model_scripts/model'
+TARGET_DIR='/model'
 
 # Model parameters
 MAX_LEN=256
@@ -17,7 +17,7 @@ EPOCHS=4
 MODEL_NAME_PATH='nlp-waseda/roberta-base-japanese'
 
 # new data path
-DATA_PATH='/home/alkalinemoe/psych_model_scripts/data/new/news10000_final_data'
+DATA_PATH='/data/new/news10000_final_data'
 
 
 python train.py \
@@ -35,14 +35,14 @@ python train.py \
 ``predict.sh`` によりバッチごと推論 (predict) 可能。
 
 ```
-TARGET_DIR='/home/matsuo/test-output'
+TARGET_DIR='/test-output'
 
 # Model parameters
 BATCH_SIZE=32
-MODEL_NAME_PATH='/home/matsuo/tamodels'
+MODEL_NAME_PATH='/tamodels'
 
 # test data path (.txt file with news text in each line)
-TEST_DATA_PATH='/home/alkalinemoe/psych_model_scripts/data/test.txt'
+TEST_DATA_PATH='/data/test.txt'
 
 python3 batch_predict.py \
 	--data_path $TEST_DATA_PATH \
@@ -53,9 +53,9 @@ python3 batch_predict.py \
 
 動作確認兼ねて学習済みモデルや学習データセットをまとめました。詳細は以下の通りです。
 
-サーバ：`karte-sum-5-image-2` (GC)
+サーバ：
 
-データ (学習用再構築)：``/home/alkalinemoe/psych_model_scripts/data``\
+データ (学習用再構築)：``/data``\
 学習済みモデル (早大RoBERTa/regression): ``/home/alkalinemoe/psych_model_scripts/model``
 
 ```
@@ -69,15 +69,15 @@ python3 batch_predict.py \
 7. 経済に期待がもてると感じた
 ```
    
-学習スクリプト：`/home/alkalinemoe/psych_model_scripts/run.sh`\
-推論スクリプト：`/home/alkalinemoe/psych_model_scripts/predict.sh`
+学習スクリプト：`/run.sh`\
+推論スクリプト：`/predict.sh`
 
 (データ・モデル等の指定あり、参考まで)
 
 ---
 
 ## 評価結果 (+学習ログ)
-`/home/alkalinemoe/psych_model_scripts/model/train_logs.txt`
+`//model/train_logs.txt`
 
 ```
 Start evaluation
@@ -140,7 +140,7 @@ Evaluating for Title: 経済に期待がもてると感じた
 ```
 
 ## 推論結果 (テストデータ、一部)：
-``/home/alkalinemoe/psych_model_scripts/output/preds_batch.txt``
+``/output/preds_batch.txt``
 
 ```
 --------------------------------------------------
